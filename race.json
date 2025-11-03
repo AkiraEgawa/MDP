@@ -1,0 +1,31 @@
+{
+  "states": ["Cool", "Warm", "Overheated"],
+  "actions": {
+    "Slow": {
+      "Cool": [
+        {"next_state": "Cool", "prob": 1.0, "reward": 1}
+      ],
+      "Warm": [
+        {"next_state": "Cool", "prob": 0.5, "reward": 1},
+        {"next_state": "Warm", "prob": 0.5, "reward": 1}
+      ],
+      "Overheated": [
+        {"next_state": "Overheated", "prob": 1.0, "reward": 0}
+      ]
+    },
+    "Fast": {
+      "Cool": [
+        {"next_state": "Cool", "prob": 0.5, "reward": 2},
+        {"next_state": "Warm", "prob": 0.5, "reward": 2}
+      ],
+      "Warm": [
+        {"next_state": "Overheated", "prob": 1.0, "reward": -10}
+      ],
+      "Overheated": [
+        {"next_state": "Overheated", "prob": 1.0, "reward": 0}
+      ]
+    }
+  },
+  "terminal_states": ["Overheated"],
+  "gamma": 0.9
+}
