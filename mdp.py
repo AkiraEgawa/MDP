@@ -1,7 +1,7 @@
 import json as j
 
 # In future iterations, I'll swap this out to ask for file name or use smth like argc argv* or smth
-with open("race.json", "r") as f:
+with open("gridworld.json", "r") as f:
     mdp = j.load(f)
 
 # Gimme values

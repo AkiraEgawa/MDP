@@ -1,0 +1,364 @@
+{
+  "states": [
+    "s_0_0",
+    "s_0_1",
+    "s_0_2",
+    "s_1_0",
+    "s_1_1",
+    "s_1_2"
+  ],
+  "actions": {
+    "up": {
+      "s_0_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        }
+      ],
+      "s_0_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        }
+      ],
+      "s_1_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ],
+      "s_1_2": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ]
+    },
+    "down": {
+      "s_0_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        }
+      ],
+      "s_0_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        }
+      ],
+      "s_1_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ],
+      "s_1_2": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ]
+    },
+    "left": {
+      "s_0_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        }
+      ],
+      "s_0_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        }
+      ],
+      "s_1_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_2": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ]
+    },
+    "right": {
+      "s_0_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        }
+      ],
+      "s_0_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_0": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_0",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_0",
+          "reward": 0.0
+        }
+      ],
+      "s_1_1": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_1",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_1",
+          "reward": -1.0
+        }
+      ],
+      "s_1_2": [
+        {
+          "prob": 0.8,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_0_2",
+          "reward": 1.0
+        },
+        {
+          "prob": 0.1,
+          "next_state": "s_1_2",
+          "reward": 0.0
+        }
+      ]
+    }
+  },
+  "terminal_states": [
+    "s_0_2"
+  ],
+  "gamma": 1
+}
