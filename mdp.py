@@ -19,7 +19,7 @@ We want to create V for each section, then call max or argmax to get the Q and R
 V0 is always just 0, so make that first
 V should always be same length as number of states
 """
-def valueIt(mdp, theta=1e-6):
+def valueIt(mdp, theta=1e-6, living_penalty = 0.1):
     V = {s: 0.0 for s in states}
     Iterations = {}
     itNum = 0
@@ -43,7 +43,7 @@ def valueIt(mdp, theta=1e-6):
                 q = 0
                 for trans in actions[a][s]: # For each possible result of action sum up the q:
                     # add to q
-                    q += trans["prob"]*(trans["reward"]+gamma*V[trans["next_state"]])
+                    q += trans["prob"]*((trans["reward"]-living_penalty)+gamma*V[trans["next_state"]])
                 q_values.append(q)
             V[s] = max(q_values) if q_values else 0
             delta = max(delta,abs(v-V[s])) # Delta is the largest jump of the optimal value at the current iteration
@@ -65,7 +65,7 @@ def valueIt(mdp, theta=1e-6):
             # Use the q formula you created
             q=0
             for trans in actions[a][s]:
-                q += trans["prob"]*(trans["reward"]+gamma*V[trans["next_state"]])
+                q += trans["prob"]*((trans["reward"]-living_penalty)+gamma*V[trans["next_state"]])
             # Now we have the reward possible from the action in s
             if q > best_value:
                 best_value = q
