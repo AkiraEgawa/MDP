@@ -106,6 +106,7 @@ def genGridJS(grid, dest, noise=0, gamma=1):
 
 grid = np.array([
     [0, 0, 1],
-    [0, -1, 0]
+    [0, 0, -1],
+    [0, 0, 0]
 ])
 genGridJS(grid, "gridworld.json", noise=0.1)

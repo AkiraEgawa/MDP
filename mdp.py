@@ -73,5 +73,5 @@ def valueIt(mdp, theta=1e-6, living_penalty = 0.1):
         policy[s] = best_action
     return V,policy,Iterations
 
-
+print(valueIt(mdp)[0])
 print(valueIt(mdp)[1])
