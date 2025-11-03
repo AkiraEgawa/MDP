@@ -21,8 +21,11 @@ V should always be same length as number of states
 """
 def valueIt(mdp, theta=1e-6):
     V = {s: 0.0 for s in states}
-    
+    Iterations = {}
+    itNum = 0
     while True:
+        Iterations[itNum] = V.copy()
+        itNum+=1
         delta = 0
         for s in states:
             if s in terminal_states:
@@ -68,7 +71,7 @@ def valueIt(mdp, theta=1e-6):
                 best_value = q
                 best_action = a
         policy[s] = best_action
-    return V,policy
+    return V,policy,Iterations
 
 
-print(valueIt(mdp))
+print(valueIt(mdp)[1])
