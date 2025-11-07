@@ -19,10 +19,11 @@ We want to create V for each section, then call max or argmax to get the Q and R
 V0 is always just 0, so make that first
 V should always be same length as number of states
 """
-def valueIt(mdp, theta=1e-6, living_penalty = 0.1):
+def valueIt(mdp, theta=1e-6, living_penalty = 0.1, epochs = 1000):
     V = {s: 0.0 for s in states}
     Iterations = {}
     itNum = 0
+    epoch = 0
     while True:
         Iterations[itNum] = V.copy()
         itNum+=1
@@ -47,8 +48,8 @@ def valueIt(mdp, theta=1e-6, living_penalty = 0.1):
                 q_values.append(q)
             V[s] = max(q_values) if q_values else 0
             delta = max(delta,abs(v-V[s])) # Delta is the largest jump of the optimal value at the current iteration
-
-        if delta < theta:
+        epoch += 1
+        if (delta < theta) or (epoch >= epochs):
             break
     
     # Iterations are now done, we have V*
@@ -73,5 +74,5 @@ def valueIt(mdp, theta=1e-6, living_penalty = 0.1):
         policy[s] = best_action
     return V,policy,Iterations
 
-print(valueIt(mdp)[0])
-print(valueIt(mdp)[1])
+print(valueIt(mdp, living_penalty = -1)[0])
+print(valueIt(mdp, living_penalty = -1)[1])
