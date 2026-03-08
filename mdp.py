@@ -74,5 +74,6 @@ def valueIt(mdp, theta=1e-6, living_penalty = 0.1, epochs = 1000):
         policy[s] = best_action
     return V,policy,Iterations
 
-print(valueIt(mdp, living_penalty = -1)[0])
-print(valueIt(mdp, living_penalty = -1)[1])
+result = valueIt(mdp, living_penalty = -1)
+print(result[0])
+print(result[1])
